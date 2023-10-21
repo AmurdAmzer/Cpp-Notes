@@ -1,1 +1,1 @@
-# Cpp-Notes
+This is notes I prepared on C++ to help with my retention and development.
