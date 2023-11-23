@@ -1,0 +1,26 @@
+#*****************************************************
+# Makefile
+#CFLAGS = -Wall -g -Wunused-variable
+#header=
+#*****************************************************
+CC = g++
+CFLAGS = -g -DDEBUG -std=c++11 -Wall
+header= $(cards).h
+main = _bicycle
+cards = _carddeck
+#****************************************************
+# Targets needed to bring the executable up to date
+default: $(main).exe
+ 
+$(main).exe: $(main).o $(cards).o
+	$(CC) -o $(main).exe $(main).o $(cards).o
+ 
+$(main).o: $(main).cpp $(header)
+	$(CC) $(CFLAGS) -c $(main).cpp
+ 
+$(cards).o: $(cards).cpp $(header)
+	$(CC) $(CFLAGS) -c $(cards).cpp
+ 
+clean:
+	rm *.o
+	rm *~
