@@ -17,31 +17,31 @@ public:
     }
 
     // Function to perform addition
-    void add(const RationalNumber& other) {
+    RationalNumber add(const RationalNumber& other) const {
         int num = numerator * other.denominator + other.numerator * denominator;
         int denom = denominator * other.denominator;
-        std::cout << num << "/" << denom;
+        return RationalNumber(num, denom);
     }
 
     // Function to perform subtraction
-    void subtract(const RationalNumber& other) {
+    RationalNumber subtract(const RationalNumber& other) const {
         int num = numerator * other.denominator - other.numerator * denominator;
         int denom = denominator * other.denominator;
-        std::cout << num << "/" << denom;
+        return RationalNumber(num, denom);
     }
 
     // Function to perform multiplication
-    void multiply(const RationalNumber& other) {
+    RationalNumber multiply(const RationalNumber& other) const {
         int num = numerator * other.numerator;
         int denom = denominator * other.denominator;
-        std::cout << num << "/" << denom;
+        return RationalNumber(num, denom);
     }
 
     // Function to perform division
-    void divide(const RationalNumber& other) {
+    RationalNumber divide(const RationalNumber& other) const {
         int num = numerator * other.denominator;
         int denom = denominator * other.numerator;
-        std::cout << num << "/" << denom;
+        return RationalNumber(num, denom);
     }
 };
 
@@ -54,13 +54,17 @@ int main() {
     std::cout << "\nSecond number: ";
     rn2.printNumber();
     std::cout << "\nAddition: ";
-    rn1.add(rn2);
+    RationalNumber resultAdd = rn1.add(rn2);
+    resultAdd.printNumber();
     std::cout << "\nSubtraction: ";
-    rn1.subtract(rn2);
+    RationalNumber resultSubtract = rn1.subtract(rn2);
+    resultSubtract.printNumber();
     std::cout << "\nMultiplication: ";
-    rn1.multiply(rn2);
+    RationalNumber resultMultiply = rn1.multiply(rn2);
+    resultMultiply.printNumber();
     std::cout << "\nDivision: ";
-    rn1.divide(rn2);
+    RationalNumber resultDivide = rn1.divide(rn2);
+    resultDivide.printNumber();
 
     return 0;
 }
