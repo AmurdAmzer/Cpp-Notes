@@ -1,5 +1,7 @@
 #include <iostream>
 
+using namespace std;
+
 class RationalNumber {
 private:
     int numerator;
@@ -13,7 +15,7 @@ public:
 
     // Function to print the rational number
     void printNumber() const {
-        std::cout << numerator << "/" << denominator;
+        cout << numerator << "/" << denominator;
     }
 
     // Function to perform addition
@@ -49,20 +51,20 @@ int main() {
     RationalNumber rn1(1, 6);
     RationalNumber rn2(2);
 
-    std::cout << "First number: ";
+    cout << "First number: ";
     rn1.printNumber();
-    std::cout << "\nSecond number: ";
+    cout << "\nSecond number: ";
     rn2.printNumber();
-    std::cout << "\nAddition: ";
+    cout << "\nAddition: ";
     RationalNumber resultAdd = rn1.add(rn2);
     resultAdd.printNumber();
-    std::cout << "\nSubtraction: ";
+    cout << "\nSubtraction: ";
     RationalNumber resultSubtract = rn1.subtract(rn2);
     resultSubtract.printNumber();
-    std::cout << "\nMultiplication: ";
+    cout << "\nMultiplication: ";
     RationalNumber resultMultiply = rn1.multiply(rn2);
     resultMultiply.printNumber();
-    std::cout << "\nDivision: ";
+    cout << "\nDivision: ";
     RationalNumber resultDivide = rn1.divide(rn2);
     resultDivide.printNumber();
 
